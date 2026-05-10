@@ -1,11 +1,13 @@
-# 📊 SEA In-Market Sales Dashboard — Power BI Enhancement
-**embecta · 7 Markets · 2026**
+# 📊 SEA In-Market Sales (IMS) Dashboard Enhancement
+### Power BI · DAX · Excel Data Pipeline | Healthcare | embecta | 2026
 
 > Sample/anonymised data used in all screenshots. Real market data is confidential.
 
 ---
 
-## The Problem
+## 📌 The Problem This Solved
+
+Before the enhancement, the regional IMS dashboard existed — but wasn't being used.
 
 | Market | Monthly Opens | Status |
 |---|---|---|
@@ -16,17 +18,45 @@
 
 **354 opens vs 600 expected. 50% of opens from just 5 users — 3 were not even sales staff.**
 
-The dashboard existed. Nobody used it.
+The dashboard existed, but it wasn't serving the people it was built for.
+---
+
+## 🎯 Project Objective
+
+> Transform the IMS dashboard from a **monthly reporting tool** into a **live commercial decision engine** — one that sales teams and business leaders would open daily, not just at month-end.
+
+The shift in purpose was fundamental:
+
+```
+BEFORE:  Monthly reporting → review what happened
+AFTER:   Real-time run rate + weekly tracking → act on what's happening now
+```
+Three strategic pillars drove the redesign:
+
+- **Unified Intelligence** — one source of truth replacing fragmented Excel files, distributor apps, and manual reports across 7 markets
+- **Commercial Prioritisation** — run-rate projections by sales rep and customer so teams can redirect effort before month-end, not after
+- **New Launch Integration** — BGM product launch campaign embedded directly into the dashboard for real-time measurement
+
 
 ---
 
-## The Shift
+## ⚙️ Technical Approach
 
-```
-BEFORE  →  Monthly report. Review what happened.
-AFTER   →  Weekly run rate. Act on what's happening now.
-```
+This was not a from-scratch build. The challenge was harder in some ways — inheriting an existing report with live data dependencies and redesigning it without breaking existing workflows.
 
+**Data architecture:**
+- Source data: Excel files submitted by country teams in **7 different formats** (SG, MY, TH, VN, ID, PH, PK)
+- Each market used different distributor systems — some real-time platforms, some daily Excel outputs, some weekly sub-distributor consolidations
+- All files were stored in a **shared regional folder**
+- DAX measures were written to **standardise, merge, and calculate** across these inconsistent inputs before any visualisation layer
+
+**Key DAX work included:**
+- Run rate calculation (annualised from MTD actuals)
+- Week-on-week gap-to-target measures
+- Customer status classification (New / Lost / Regained) using order history
+- R12M market growth trend automation via MIDAS Dataflow integration
+- Rolling 6-month average order frequency per customer
+  
 ---
 
 ## What Was Built
@@ -51,10 +81,24 @@ AFTER   →  Weekly run rate. Act on what's happening now.
 
 ---
 
-### 🔹 Customer-Level Run Rate
-*Which accounts are at risk right now?*
+### 🔹 Account Summary *(new)*
 
-![Customer Table](screenshots/customer_run_rate.png)
+**Added:** Customer status tracking + customer-level run rate
+
+![Customer Run Rate Table](screenshots/customer_run_rate.png)
+
+Two analytical layers:
+
+**Customer Status (historical view):**
+Tracks New, Lost, and Regained customers month-by-month. If lost customers consistently outnumber new and regained combined, it signals a retention problem requiring root-cause investigation — pricing, stock, service level.
+
+**Customer Run Rate (current month):**
+For each account: actual revenue, IMS quantity, quantity growth %, run rate projection, last order date, average orders per month (last 6M), and orders this month.
+
+The combination enables a specific decision framework:
+- Run rate below expectations + orders this month < 6M average + recent last order date → **push for additional sales this month**
+- Quantity growth below market growth + below last year → **this account needs attention**
+
 
 > Last order date + orders this month vs 6M average → tells reps exactly where to push
 
@@ -83,7 +127,7 @@ AFTER   →  Weekly run rate. Act on what's happening now.
 | # | View | Type |
 |---|---|---|
 | 1 | Overall Sales Performance | Retained |
-| 2 | Quantity + Category Growth vs Market | Enhanced |
+| 2 | Quantity + Category Growth vs Market | New |
 | 3 | Sales Rep Weekly + Run Rate | **New** |
 | 4 | Account Summary + Customer Run Rate | **New** |
 | 5 | Cluster Summary (MBR) — automated | Enhanced |
@@ -91,6 +135,17 @@ AFTER   →  Weekly run rate. Act on what's happening now.
 | 7 | New Launch Campaign (BGM) | **New** |
 
 ---
+
+## 💡 Key Lessons
+
+1. **A dashboard that isn't used isn't an analytics asset — it's a maintenance burden.** Adoption is a product problem, not a training problem.
+
+2. **The biggest insight gap was time.** Monthly reporting told teams what happened. Weekly run rates tell them what to do next. That shift — from retrospective to predictive — changed how the tool was perceived.
+
+3. **Stakeholder requirements gathering before building** saved significant rework. The features that drove adoption (rep tracking, customer run rate) came directly from sales leader interviews, not assumptions.
+
+4. **Data standardisation across 7 markets with different formats** was the hardest part — and the least visible. Most of the DAX work was making messy, inconsistent inputs behave like a single clean dataset.
+
 
 ## Stack
 
@@ -100,7 +155,7 @@ AFTER   →  Weekly run rate. Act on what's happening now.
 
 ## 🔗 More Projects
 
-[🔋 Time Series Forecasting — R](https://github.com/thaotracy-sg/electric-power-co2-forecasting-europe) · [📱 Panel Data Analysis — R](https://github.com/thaotracy-sg/game-app-panel-analysis) · [🌿 Logit Model — R](https://github.com/thaotracy-sg/sustainable-brand-logit-analysis) · [🛒 SQL + R Pipeline](https://github.com/thaotracy-sg/sql-r-customer-survey-pipeline)
+[🔋 Time Series Forecasting — R](https://github.com/thaotracy-sg/electric-power-co2-forecasting-europe) <br> [📱 Panel Data Analysis — R](https://github.com/thaotracy-sg/game-app-panel-analysis) <br> [🌿 Logit Model — R](https://github.com/thaotracy-sg/sustainable-brand-logit-analysis) <br> [🛒 SQL + R Pipeline](https://github.com/thaotracy-sg/sql-r-customer-survey-pipeline)
 
 ---
-*Tracy Nguyen · embecta Business Support Intern · Dec 2025 – Apr 2026*
+*Tracy Nguyen · embecta Business Support Intern · Dec 2025 – Jun 2026*
