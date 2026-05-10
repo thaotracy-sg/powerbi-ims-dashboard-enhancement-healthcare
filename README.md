@@ -64,7 +64,7 @@ This was not a from-scratch build. The challenge was harder in some ways — inh
 ### 🔹 Product Category Growth vs Market
 *Is the business growing faster or slower than the market?*
 
-![Product Category](assets/Product_Category1.png)
+![Product Category R12M Growth](assets/Product_Category1.png)
 
 > Pen Needles actual −18.1% vs market +13.2% → losing share, not just declining
 
@@ -73,9 +73,9 @@ This was not a from-scratch build. The challenge was harder in some ways — inh
 ### 🔹 Sales Rep Weekly Tracking + Run Rate
 *Who needs support before month-end — not after?*
 
-![Weekly](assets/Weekly_Run_Rate.jpeg)
+![Weekly Run Rate](assets/Weekly_Run_Rate.jpeg)
 
-> Feb W1: 273% of target → Feb W3: 40.5% → flag and act in the same month
+> Weekly % target tracked per rep → flag gaps and act in the same month
 
 ![Run Rate](screenshots/sales_rep_runrate.png)
 
