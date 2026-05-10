@@ -64,7 +64,7 @@ This was not a from-scratch build. The challenge was harder in some ways — inh
 ### 🔹 Product Category Growth vs Market
 *Is the business growing faster or slower than the market?*
 
-![Product Category](screenshots/product_category_growth.png)
+![Product Category](assets/Product_Category1.png)
 
 > Pen Needles actual −18.1% vs market +13.2% → losing share, not just declining
 
@@ -73,7 +73,7 @@ This was not a from-scratch build. The challenge was harder in some ways — inh
 ### 🔹 Sales Rep Weekly Tracking + Run Rate
 *Who needs support before month-end — not after?*
 
-![Weekly](screenshots/sales_rep_weekly.png)
+![Weekly](assets/Weekly_Run_Rate.jpeg)
 
 > Feb W1: 273% of target → Feb W3: 40.5% → flag and act in the same month
 
@@ -85,7 +85,7 @@ This was not a from-scratch build. The challenge was harder in some ways — inh
 
 **Added:** Customer status tracking + customer-level run rate
 
-![Customer Run Rate Table](screenshots/customer_run_rate.png)
+![Customer Run Rate Table](assets/Customer_Level_Run_Rate.png)
 
 Two analytical layers:
 
@@ -107,7 +107,7 @@ The combination enables a specific decision framework:
 ### 🔹 New Launch Dashboard (BGM)
 *Campaign performance in one place — no more manual spreadsheets*
 
-![BGM Launch](screenshots/new_launch_bgm.png)
+![BGM Launch](assets/New_product_launch.png)
 
 ---
 
