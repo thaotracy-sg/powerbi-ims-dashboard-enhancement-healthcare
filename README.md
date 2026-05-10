@@ -78,7 +78,7 @@ This was not a from-scratch build. The challenge was harder in some ways — inh
 > Weekly % target tracked per rep → flag gaps and act in the same month
 
 ![Run Rate by Sale Rep](assets/Run_Rate_by_Sale_Rep.png)
-
+> **Note:** IF the reporting period has reached month-end, the **Run Rate %** is equivalent to the **Target Achieved %**. No projection methodology is applied, as calculations are based on actual finalized performance.
 ---
 
 ### 🔹 Account Summary *(new)*
