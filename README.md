@@ -77,7 +77,7 @@ This was not a from-scratch build. The challenge was harder in some ways — inh
 
 > Weekly % target tracked per rep → flag gaps and act in the same month
 
-![Run Rate](screenshots/sales_rep_runrate.png)
+![Run Rate by Sale Rep](assets/Run_Rate_by_Sale_Rep.png)
 
 ---
 
